@@ -22,6 +22,25 @@ export class HelloApp implements AfterViewInit {
     }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 interface BoardZAppWindow extends Window {
     initAdminLTE(): void;
 }

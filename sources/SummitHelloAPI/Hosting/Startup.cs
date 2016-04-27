@@ -8,6 +8,7 @@ using System.Linq;
 using System.Net.Http.Formatting;
 using System.Web;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 [assembly: OwinStartup(typeof(Startup))]
 
@@ -26,6 +27,9 @@ namespace Hosting
                 new CamelCasePropertyNamesContractResolver();
 
             httpConfig.Formatters.Add(jsonFormatter);
+
+            // TODO: Refactor ;(
+            httpConfig.EnableCors(new EnableCorsAttribute("*", "*", "*"));
 
             app.UseWebApi(httpConfig);
         }
